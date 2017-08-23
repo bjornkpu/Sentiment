@@ -3,5 +3,11 @@ sudo: false
 script: mvn clean verify
 jdk:
   - oraclejdk8
+notifications:
+  email:
+    recipients:
+      - bk.punsvik@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
 after_success:
   - bash <(curl -s https://codecov.io/bash)
